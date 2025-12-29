@@ -1,10 +1,13 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  
+  [build.environment]
+    NODE_VERSION = "20.9.0"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  
+
 # Required for Next.js App Router
 [[redirects]]
   from = "/*"
@@ -36,8 +39,6 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
 # Cache static assets
 [[headers]]
@@ -50,51 +51,8 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
-# Cache images from public folder
+# Cache images
 [[headers]]
   for = "/banner.jpg"
   [headers.values]
     Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/public/*.jpg"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/public/*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/public/*.svg"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-# Cache other assets
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.ts"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/*.tsx"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-# Environment variables for build
-[build.environment]
-  NODE_VERSION = "18"
-  NEXT_PUBLIC_SITE_URL = "https://cancer-awareness.netlify.app"
-  NEXT_PUBLIC_APP_NAME = "Cancer Awareness"
-  NEXT_PUBLIC_DESCRIPTION = "Comprehensive cancer awareness and information resource"
