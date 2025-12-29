@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌸 Cancer Awareness & Support Platform
 
-## Getting Started
+A modern, interactive web platform built to spread cancer awareness, provide emotional support, and inspire users through thoughtful design, smooth animations, and meaningful content.
 
-First, run the development server:
+🚀 Overview
 
-```bash
+This project is designed with one clear goal: to inform, inspire, and emotionally support users.
+Cancer-related topics are sensitive, so the website focuses on a calm, clean, and respectful user experience while still feeling modern and engaging.
+
+From the hero section to dynamic inspirational quotes, every part of the site is carefully planned to guide the user smoothly and positively.
+
+🧠 Thought Process & Design Philosophy
+
+Clarity first: The hero section immediately explains the purpose of the website.
+
+Emotion-aware UI: Soft gradients, subtle animations, and meaningful visuals help build trust and comfort.
+
+Minimal but powerful: No clutter, only essential information with impact.
+
+Dynamic content: Quotes refresh automatically or via a button to keep the experience fresh.
+
+User flow: Awareness → Inspiration → Engagement.
+
+🧩 Key Features
+
+✨ Interactive Hero Section with animated background effects
+
+🎯 Banner image aligned with the hero for a single-screen experience
+
+💬 Dynamic inspirational quotes (refresh or button-based)
+
+🎥 Smooth animations using Framer Motion
+
+🌗 Responsive and accessible UI
+
+⚡ Fast performance with Next.js
+
+🎨 Clean styling with Tailwind CSS
+
+🔁 API-based data fetching
+
+🛠 Tech Stack
+Technology	Why It Was Used
+Next.js	Fast rendering, routing, and API routes
+React	Component-based, reusable UI
+Tailwind CSS	Rapid, consistent, and responsive styling
+Framer Motion	Smooth and professional animations
+Aceternity UI	Advanced animated UI components
+TypeScript	Type safety and better code quality
+API Routes	Fetch dynamic content like quotes
+📁 Project Structure
+cancer-awareness/
+├── .next/
+├── node_modules/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── quotes/
+│   │   │       └── route.ts
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   │   ├── ui/
+│   │   │   ├── background-ripple.tsx
+│   │   │   ├── card-hover-effect.tsx
+│   │   │   └── spotlight.tsx
+│   │   │
+│   │   ├── AwarenessSection.tsx
+│   │   ├── Banner.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   └── Quotes.tsx
+│   │
+│   └── lib/
+│       └── utils.ts
+│
+├── .gitignore
+├── .nvmrc
+├── components.json
+├── eslint.config.mjs
+├── netlify.toml
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+└── README.md
+🖼 Banner Image Usage
+
+Banner images are stored in the /public/images folder
+
+Imported using Next.js Image component for optimization
+
+Positioned inside the hero layout to stay visible on the first screen
+
+🔄 Quotes Flow
+
+Quotes are fetched from a custom API route (/api/quotes)
+
+A “New Quote” button triggers re-fetching
+
+Page refresh also loads a new quote
+
+Proper loading and error handling included
+
+🧪 Getting Started
+1️⃣ Clone the repository
+git clone https://github.com/your-username/project-name.git
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4️⃣ Open in browser
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📌 Future Improvements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Add user stories or survivor experiences
 
-## Learn More
+Expand awareness sections with verified resources
 
-To learn more about Next.js, take a look at the following resources:
+Add accessibility enhancements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy with CI/CD
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add analytics for engagement tracking
 
-## Deploy on Vercel
+🙌 Final Note
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project represents my approach to building meaningful products, not just visually appealing websites.
+It combines strong frontend engineering, thoughtful UX, and real-world purpose, reflecting my growth as a developer who cares about both technology and people.
