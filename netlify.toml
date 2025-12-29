@@ -1,0 +1,100 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  
+# Required for Next.js App Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# For 404 handling
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Public folder assets
+[[redirects]]
+  from = "/banner.jpg"
+  to = "/banner.jpg"
+  status = 200
+
+[[redirects]]
+  from = "/public/*"
+  to = "/:splat"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+# Cache static assets
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/_next/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Cache images from public folder
+[[headers]]
+  for = "/banner.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/public/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/public/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/public/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Cache other assets
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.ts"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.tsx"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Environment variables for build
+[build.environment]
+  NODE_VERSION = "18"
+  NEXT_PUBLIC_SITE_URL = "https://cancer-awareness.netlify.app"
+  NEXT_PUBLIC_APP_NAME = "Cancer Awareness"
+  NEXT_PUBLIC_DESCRIPTION = "Comprehensive cancer awareness and information resource"
